@@ -56,6 +56,8 @@ public class OrderController {
     @PostMapping
     public ResponseEntity<?> createOrder(@RequestBody OrderRequestDto orderDto) {
 
+        // Validate the request data
+
         if (orderDto.userId() == null || orderDto.totalAmount() <= 0 || orderDto.orderItem() == null
                 || orderDto.orderItem().isEmpty())
             return new ResponseEntity<>(Map.of(

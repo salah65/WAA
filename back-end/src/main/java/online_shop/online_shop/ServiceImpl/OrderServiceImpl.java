@@ -23,8 +23,9 @@ public class OrderServiceImpl implements OrderService {
     private OrderAdapter orderAdapter;
 
     @Override
-    public OrderResponseDto createOrder(OrderRequestDto orderDto) {
+    public OrderResponseDto createOrder(OrderRequestDto orderDto) { // create
 
+        //Save the order via OrderAdapter
         var order = orderAdapter.toCreateOrderEntity(orderDto);
         var savedOrder = orderRepository.save(order);
         return orderAdapter.toResponseDto(savedOrder);

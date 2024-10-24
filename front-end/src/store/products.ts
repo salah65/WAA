@@ -183,7 +183,7 @@ const useStore = () => {
         })),
       };
 
-      const response = await fetch(`${baseUrl}/orders`, {
+      const response = await fetch(`${baseUrl}/orders`, { //calling order create order API
         method: "POST",
         headers: {
           "Content-Type": "application/json",

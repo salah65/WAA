@@ -10,7 +10,7 @@ const OrderSummary = () => {
   const setDelivery = (type) => {
     setDeliveryType(type);
   };
-  const checkOut = async () => {
+  const checkOut = async () => { //checkout implementation
     if (!auth.state.user) {
       modal.openModal(false);
       return;
