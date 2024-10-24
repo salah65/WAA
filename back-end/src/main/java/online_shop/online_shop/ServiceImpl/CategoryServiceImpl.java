@@ -62,16 +62,13 @@ public class CategoryServiceImpl implements CategoryService {
         Category category = categoryRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Category not found"));
 
-        // Delete all cart items associated with products in this category
         for (Product product : category.getProducts()) {
 
             orderItemRepository.deleteAllByProductId(product.getId());
         }
 
-        // Delete all products in this category
         productRepository.deleteAll(category.getProducts());
 
-        // Finally, delete the category
         categoryRepository.delete(category);
     }
 }

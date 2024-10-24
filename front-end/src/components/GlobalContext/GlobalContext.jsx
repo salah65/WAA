@@ -1,8 +1,8 @@
 import { createContext, useContext } from "react";
-import useStore from "../../store/products";
 import useAuth from "../../store/auth";
 import useModal from "../../store/modal";
 import useOrders from "../../store/orders.ts";
+import useStore from "../../store/products";
 
 const globalContext = createContext();
 

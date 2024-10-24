@@ -1,9 +1,8 @@
-import React from "react";
-import { toast } from "react-toastify";
-import "./Modal.css";
-import ClipLoader from "react-spinners/ClipLoader";
 import { useState } from "react";
+import ClipLoader from "react-spinners/ClipLoader";
+import { toast } from "react-toastify";
 import { useGlobalContext } from "../GlobalContext/GlobalContext";
+import "./Modal.css";
 
 const CancelOrder = () => {
   const { modal, orders, auth } = useGlobalContext();
@@ -20,7 +19,7 @@ const CancelOrder = () => {
       .cancelOrder(order_to_be_cancelled)
       .then(() => {
         toast.success(
-          `Order #${order_to_be_cancelled.slice(0, 6)} has been canceled`
+          `Order #${order_to_be_cancelled} has been canceled`
         );
         // get new orders
         orders.getOrders(auth.state.user.id);
@@ -32,8 +31,6 @@ const CancelOrder = () => {
       .finally(() => {
         setLoading(false);
       });
-    // submit cancel order here
-    // close modal here
   };
   return (
     <div className="modal-container">

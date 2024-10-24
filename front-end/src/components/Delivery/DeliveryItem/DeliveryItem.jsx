@@ -125,7 +125,7 @@ const DeliveryItem = ({ order }) => {
                 <button
                   className="btn-rounded danger-zone-button report-issue"
                   onClick={() => {
-                    window.location.href = `mailto:www.minisylar3@gmail.com?subject=Reporting Order #${order.id}`;
+                    window.location.href = `mailto:www.myouakim@miu.edu?subject=Reporting Order #${order.id}`;
                   }}
                 >
                   Report Issue

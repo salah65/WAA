@@ -21,8 +21,6 @@ const calculateCartTotals = (cart: Product[]) => {
 };
 
 const reducer = (state: State, action: Action): State => {
-  console.log("state", state);
-  console.log("action", action);
 
   switch (action.type) {
     case ActionTypes.GET_PRODUCTS:

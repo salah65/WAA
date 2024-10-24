@@ -78,7 +78,9 @@ public class OrderController {
     // }
 
     @PutMapping("/{id}")
-    public ResponseEntity<OrderResponseDto> updateOrder(@PathVariable Long id, @RequestBody String status) {
+    public ResponseEntity<OrderResponseDto> updateOrder(@PathVariable Long id,
+            @RequestBody Map<String, String> requestBody) {
+        String status = requestBody.get("status");
         var orderResponse = orderService.updateOrderStatus(id, status);
         return new ResponseEntity<>(orderResponse, HttpStatus.OK);
     }

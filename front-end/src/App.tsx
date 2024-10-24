@@ -1,21 +1,19 @@
-import HomeView from "./views/HomeView";
-import ErrorView from "./views/ErrorView";
+import { useEffect } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import ShopFooter from "./components/Footer/ShopFooter";
+import { useGlobalContext } from "./components/GlobalContext/GlobalContext";
+import CancelOrder from "./components/Modals/CancelOrder";
+import Modal from "./components/Modals/Modal";
+import NavBar from "./components/NavBar/NavBar";
 import CartView from "./views/CartView";
 import DeliveryView from "./views/DeliveryView";
-import { useEffect } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { ToastContainer, toast } from "react-toastify";
-import Modal from "./components/Modals/Modal";
-import CancelOrder from "./components/Modals/CancelOrder";
-import "react-toastify/dist/ReactToastify.css";
-import RequestCookie from "./components/CookieBanner/CookieBanner";
-import { useGlobalContext } from "./components/GlobalContext/GlobalContext";
-import NavBar from "./components/NavBar/NavBar";
-import ShopFooter from "./components/Footer/ShopFooter";
+import ErrorView from "./views/ErrorView";
+import HomeView from "./views/HomeView";
 
 
 function App() {
-  console.log("App loaded");
 
   let { store } = useGlobalContext();
   let { modal } = useGlobalContext();

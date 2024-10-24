@@ -65,16 +65,18 @@ const useOrders = () => {
   };
 
   const cancelOrder = async (order_id: string) => {
+    const user: UserResponse = getUserFromLocalStorage();
     const response = await fetch(
-      `url/cancel-order`,
+      `${process.env.REACT_APP_BASE_URL}/orders/${order_id}`,
       {
-        method: "POST",
+        method: "PUT",
         headers: {
           "Content-Type": "application/json",
+          Authorization: `Bearer ${user.jwtToken}`,
         },
         mode: "cors",
         credentials: "include",
-        body: JSON.stringify({ order_id }),
+        body: JSON.stringify({ "status": "Cancelled" }),
       }
     );
 

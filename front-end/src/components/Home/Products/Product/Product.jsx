@@ -5,7 +5,7 @@ import { useGlobalContext } from "../../../GlobalContext/GlobalContext";
 import "./Product.css";
 
 const Product = ({ product }) => {
-  let { store, auth, modal } = useGlobalContext();
+  let { store } = useGlobalContext();
   let stars = [];
   for (let i = 0; i < product?.rating; i++) {
     stars.push(<FaStar key={i} />);
